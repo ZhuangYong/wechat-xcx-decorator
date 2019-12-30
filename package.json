@@ -1,6 +1,6 @@
 {
   "name": "wechat-mini-program-decorator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "wei xin mini program decorator",
   "main": "dist/index.js",
   "scripts": {

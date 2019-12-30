@@ -3,7 +3,7 @@ import Paged from "./Paged";
 import Compute from "./Compute";
 import Watch from "./Watch";
 
-module.exports = {
+export default {
     Paged,
     Componented,
     Compute,
