@@ -35,5 +35,9 @@
     "babel-preset-latest": "^6.24.1",
     "rollup-plugin-babel": "^4.0.3",
     "rollup-plugin-json": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZhuangYong/wechat-xcx-decorator.git"
   }
 }
