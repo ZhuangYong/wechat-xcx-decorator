@@ -130,3 +130,39 @@ export default ComponentName extends BaseComponent {
 }
 
 ```
+
+## BasePage为抽离的基础页面class，如无也可以不用继承
+```
+class BasePage {
+
+  constructor() {
+     ……
+  }
+    
+  //子类相同方法若需要调用基类，只需 super.onLoad即可，其他方法同样
+  onLoad(options) {
+      ……
+  };
+
+  ……
+    
+}
+```
+
+## BaseComponent为抽离的基础组件class，如无也可以不用继承
+```
+class BaseComponent {
+
+  constructor() {
+     ……
+  }
+    
+  //子类相同方法若需要调用基类，只需 super.ready即可，其他方法同样
+  ready() {
+      ……
+  };
+
+  ……
+    
+}
+```
