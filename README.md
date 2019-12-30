@@ -1,9 +1,60 @@
-# 修改page与component 原生写法，修改为class方式加注解@
+# 修改page与component 原生写法，修改为class方式加注解@，并都添加了watch与compute
 
+
+## 页面class js写法（json、wxml、wxss使用不变）
+```
+@Paged // 页面装饰器，替代Page({……写法
+export default PageName extends BasePage {
+
+    //此处若无操作可以省略构造方法
+    constructor() {
+        super();
+        this.data = {
+            dataKey: "dataValue",
+            ...this.data
+        }
+    }
+
+    //data除了写到constructor，也可以直接写到此处
+    data = {
+
+    }
+    
+    @Compute // 计算返回值， wxml 中使用: xxxx="{{computeKey}}"
+    computeKey() {
+        ……
+        return result;
+    }
+
+    @Watch // data 中 watchKey 修改时回调
+    watchKey() {
+        ……
+        do sth or this.setData({……});
+    }
+
+    // 生命周期函数
+    onLoad() {
+
+    }
+    ……其他生命周期函数
+
+    //普通方法直接写到此处，不能与生命周期函数同名
+    myFunction() {
+        ……
+        //触发watch与compute
+        this.setData({……})
+        ……
+    }
+    
+    ……
+}
+
+
+```
 
 ## 组件class js写法（json、wxml、wxss使用不变）
 ```
-// 组件装饰器
+// 组件装饰器，替代Component({……写法
 // properties 可直接写在装饰器中，优先级最高
 @Componented({
     //组件properties
@@ -77,56 +128,5 @@ export default ComponentName extends BaseComponent {
     ……
 
 }
-
-```
-
-## 页面class js写法（json、wxml、wxss使用不变）
-```
-@Paged // 页面装饰器
-export default PageName extends BasePage {
-
-    //此处若无操作可以省略构造方法
-    constructor() {
-        super();
-        this.data = {
-            dataKey: "dataValue",
-            ...this.data
-        }
-    }
-
-    //data除了写到constructor，也可以直接写到此处
-    data = {
-
-    }
-    
-    @Compute // 计算返回值， wxml 中使用: xxxx="{{computeKey}}"
-    computeKey() {
-        ……
-        return result;
-    }
-
-    @Watch // data 中 watchKey 修改时回调
-    watchKey() {
-        ……
-        do sth or this.setData({……});
-    }
-
-    // 生命周期函数
-    onLoad() {
-
-    }
-    ……其他生命周期函数
-
-    //普通方法直接写到此处，不能与生命周期函数同名
-    myFunction() {
-        ……
-        //触发watch与compute
-        this.setData({……})
-        ……
-    }
-    
-    ……
-}
-
 
 ```
