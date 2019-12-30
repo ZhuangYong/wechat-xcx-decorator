@@ -1,0 +1,39 @@
+{
+  "name": "wechat-mini-program-decorator",
+  "version": "1.0.0",
+  "description": "wei xin mini program decorator",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -c -w",
+    "dev": "npm-run-all --parallel start watch",
+    "start": "serve public"
+  },
+  "keywords": [
+    "wx",
+    "wechat",
+    "wei xin",
+    "decorator",
+    "mini",
+    "program"
+  ],
+  "author": "walljack@163.com",
+  "dependencies": {
+    "miniprogram-computed": "^2.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-transform-runtime": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-latest": "^6.24.1",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-json": "^4.0.0"
+  }
+}
